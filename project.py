@@ -1,33 +1,36 @@
 import mysql.connector
+import sys
 
-def import():
-
-
-def insertAgentClient():
+#def import(folderName:str):
 
 
-def addCustomizedModel():
+#def insertAgentClient():
 
 
-def deleteBaseModel():
+#def addCustomizedModel():
 
 
-def listInternetService():
+#def deleteBaseModel():
 
 
-def countCustomizedModel():
+#def listInternetService():
 
 
-def topNDurationConfig():
+#def countCustomizedModel():
 
 
-def listBaseModelKeyWord():
+#def topNDurationConfig():
 
 
-def printNL2SQLresult():
+#def listBaseModelKeyWord():
+
+
+#def printNL2SQLresult():
 
 
 def main():
+    function = sys.argv[1]
+    arguments = sys.argv[2:]
 
 if __name__ == '__main__':
     main()
