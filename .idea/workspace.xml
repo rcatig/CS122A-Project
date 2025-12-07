@@ -44,6 +44,11 @@
     "settings.editor.selected.configurable": "project.propVCSSupport.Confirmation",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="PyCoverageOptionsProvider">
@@ -98,7 +103,7 @@
       <updated>1765048375603</updated>
       <workItem from="1765048400464" duration="7692000" />
       <workItem from="1765141910705" duration="646000" />
-      <workItem from="1765146524885" duration="301000" />
+      <workItem from="1765146524885" duration="1414000" />
     </task>
     <servers />
   </component>
