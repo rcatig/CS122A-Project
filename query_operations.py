@@ -1,7 +1,3 @@
-"""
-Query and list operations for the CS122A Project
-"""
-
 import sys
 import csv
 from mysql.connector import Error
@@ -10,11 +6,6 @@ from config import NL2SQL_RESULTS_FILE
 
 
 def list_internet_service(bmid: int):
-    """
-    Q5: List Internet Service
-    python3 main.py listInternetService [bmid:int]
-    Output: sid, endpoint, provider
-    """
     try:
         conn = get_connection()
         cur = conn.cursor()
@@ -37,11 +28,6 @@ def list_internet_service(bmid: int):
 
 
 def count_customized_model(bmids):
-    """
-    Q6: Count Customized Model
-    python3 main.py countCustomizedModel [bmid1:int] [bmid2:int] ...
-    Output: bmid, description, customizedModelCount
-    """
     if not bmids:
         return
 
@@ -71,11 +57,6 @@ def count_customized_model(bmids):
 
 
 def top_n_duration_config(uid: int, N: int):
-    """
-    Q7: Top-N Duration Config
-    python3 main.py topNDurationConfig [uid:int] [N:int]
-    Output: uid, cid, label, content, duration
-    """
     try:
         conn = get_connection()
         cur = conn.cursor()
@@ -99,11 +80,6 @@ def top_n_duration_config(uid: int, N: int):
 
 
 def list_base_model_keyword(keyword: str):
-    """
-    Q8: Keyword Search
-    python3 main.py listBaseModelKeyWord [keyword:str]
-    Output: bmid, sid, provider, domain
-    """
     try:
         conn = get_connection()
         cur = conn.cursor()
@@ -130,12 +106,6 @@ def list_base_model_keyword(keyword: str):
 
 
 def print_nl2sql_result():
-    """
-    Q9: Print NL2SQL Result
-    python3 main.py printNL2SQLresult
-    Reads NL2SQL experiment CSV (NL2SQL_results.csv by default)
-    and prints it line by line as comma-separated values.
-    """
     try:
         with open(NL2SQL_RESULTS_FILE, newline="", encoding="utf-8") as f:
             reader = csv.reader(f)

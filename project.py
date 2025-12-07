@@ -1,8 +1,3 @@
-#!/usr/bin/env python3
-"""
-CS122A Project – command-line Agent platform manager
-"""
-
 import sys
 from db_utils import print_bool, normalize_arg
 from data_operations import (
@@ -19,9 +14,7 @@ from query_operations import (
     print_nl2sql_result
 )
 
-
 def main():
-    """Main entry point for the CS122A Project command-line interface."""
     if len(sys.argv) < 2:
         print("Usage: python3 project.py <function> [params...]")
         return
@@ -64,7 +57,6 @@ def main():
         list_internet_service(bmid)
 
     elif cmd == "countCustomizedModel":
-        # args is already the list of bmids as strings
         count_customized_model(args)
 
     elif cmd == "topNDurationConfig":
@@ -84,7 +76,6 @@ def main():
         print_nl2sql_result()
 
     else:
-        # According to spec, you can assume cmd is valid, but just in case:
         print(f"Unknown command: {cmd}")
 
 
