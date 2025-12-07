@@ -7,7 +7,7 @@ def get_connection():
 
 
 def print_bool(ok: bool):
-    print('True' if ok else 'False')
+    print('Success' if ok else 'Fail')
 
 
 def normalize_arg(arg: str):
