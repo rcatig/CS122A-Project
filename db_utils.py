@@ -27,6 +27,6 @@ def execute_ddl_from_file(conn, ddl_path: str):
 
 def print_table_rows(rows):
     for row in rows:
-        printable = ["NULL" if v is None else str(v) for v in row]
+        printable = ["NULL" if v is None else str(v).strip() for v in row]
         print(",".join(printable))
 

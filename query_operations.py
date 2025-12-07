@@ -61,12 +61,18 @@ def top_n_duration_config(uid: int, N: int):
         cur = conn.cursor()
 
         sql = """
-            SELECT c.client_uid, mc.cid, c.labels, c.content, mc.duration
+            SELECT 
+            c.client_uid,
+            mc.cid,
+            MIN(c.labels) AS labels,
+            MIN(c.content) AS content,
+            MAX(mc.duration) AS duration 
             FROM ModelConfigurations AS mc
             JOIN Configuration AS c ON mc.cid = c.cid
             WHERE c.client_uid = %s
-            ORDER BY mc.duration DESC
-            LIMIT %s
+            GROUP BY mc.cid
+            ORDER BY duration DESC
+            LIMIT %s;
         """
         cur.execute(sql, (uid, N))
         rows = cur.fetchall()
