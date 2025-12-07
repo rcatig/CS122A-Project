@@ -23,7 +23,7 @@ from query_operations import (
 def main():
     """Main entry point for the CS122A Project command-line interface."""
     if len(sys.argv) < 2:
-        print("Usage: python3 project.py <function> [params...]")
+        print("Usage: python3 main.py <function> [params...]")
         return
 
     cmd = sys.argv[1]

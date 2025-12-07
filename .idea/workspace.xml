@@ -4,7 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d864490-f9c9-463c-bdc0-43479ba3cbbc" name="Changes" comment="" />
+    <list default="true" id="9d864490-f9c9-463c-bdc0-43479ba3cbbc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_operations.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db_utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ddl.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/query_operations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgentClient.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/AgentClient.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgentCreator.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/AgentCreator.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BaseModel.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/BaseModel.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Configuration.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/Configuration.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomizedModel.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/CustomizedModel.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStorage.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/DataStorage.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InternetService.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/InternetService.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LLMService.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/LLMService.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ModelConfigurations.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/ModelConfigurations.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ModelServices.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/ModelServices.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/User.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.py" beforeDir="false" afterPath="$PROJECT_DIR$/project.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,9 +34,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="36U5apq5na6pV16trn55ZtC14VZ" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -30,13 +51,17 @@
     "Python.main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "project.propVCSSupport.Confirmation",
+    "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -72,7 +97,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-09665e90c3a7-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.15026.15" />
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-PY-252.28238.29" />
+        <option value="bundled-python-sdk-a101402ee41c-968fe969f28a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.28238.29" />
       </set>
     </attachedChunks>
   </component>
@@ -85,6 +111,7 @@
       <option name="presentableId" value="Default" />
       <updated>1765048375603</updated>
       <workItem from="1765048400464" duration="7692000" />
+      <workItem from="1765141910705" duration="646000" />
     </task>
     <servers />
   </component>
