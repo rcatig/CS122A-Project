@@ -1,4 +1,3 @@
-import sys
 import os
 import csv
 from mysql.connector import Error
@@ -68,7 +67,6 @@ def import_data(folder_name: str) -> bool:
         return True
 
     except Exception as e:
-        print("ERROR in import_data:", e)
         if conn is not None:
             try:
                 conn.rollback()
@@ -114,7 +112,6 @@ def insert_agent_client(args) -> bool:
         conn.close()
         return True
     except Error as e:
-        print("ERROR in insertAgentClient:", e, file=sys.stderr)
         try:
             conn.rollback()
         except Exception:
@@ -139,7 +136,6 @@ def add_customized_model(mid: int, bmid: int) -> bool:
         conn.close()
         return True
     except Error as e:
-        print("ERROR in addCustomizedModel:", e, file=sys.stderr)
         try:
             conn.rollback()
         except Exception:
@@ -161,7 +157,6 @@ def delete_base_model(bmid: int) -> bool:
         conn.close()
         return cur.rowcount > 0
     except Error as e:
-        print("ERROR in deleteBaseModel:", e, file=sys.stderr)
         try:
             conn.rollback()
         except Exception:

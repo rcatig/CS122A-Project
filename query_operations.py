@@ -1,4 +1,3 @@
-import sys
 import csv
 from mysql.connector import Error
 from db_utils import get_connection, normalize_arg, print_table_rows
@@ -24,7 +23,7 @@ def list_internet_service(bmid: int):
         cur.close()
         conn.close()
     except Error as e:
-        print("ERROR in listInternetService:", e, file=sys.stderr)
+        print("Fail")
 
 
 def count_customized_model(bmids):
@@ -53,7 +52,7 @@ def count_customized_model(bmids):
         cur.close()
         conn.close()
     except Error as e:
-        print("ERROR in countCustomizedModel:", e, file=sys.stderr)
+        print("Fail")
 
 
 def top_n_duration_config(uid: int, N: int):
@@ -76,7 +75,7 @@ def top_n_duration_config(uid: int, N: int):
         cur.close()
         conn.close()
     except Error as e:
-        print("ERROR in topNDurationConfig:", e, file=sys.stderr)
+        print("Fail")
 
 
 def list_base_model_keyword(keyword: str):
@@ -102,7 +101,7 @@ def list_base_model_keyword(keyword: str):
         cur.close()
         conn.close()
     except Error as e:
-        print("ERROR in listBaseModelKeyWord:", e, file=sys.stderr)
+        print("Fail")
 
 
 def print_nl2sql_result():
@@ -112,5 +111,5 @@ def print_nl2sql_result():
             for row in reader:
                 print(",".join(row))
     except Exception as e:
-        print("ERROR in printNL2SQLresult:", e, file=sys.stderr)
+        print("Fail")
 
