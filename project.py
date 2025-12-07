@@ -130,6 +130,20 @@ DDLS = [ # hw2 solutions
     '''
 ]
 
+INSERT_STATEMENTS = {
+    "User": "INSERT INTO USER(uid,email,username) VALUES(%s,%s,%s)",
+    "AgentCreator": "INSERT INTO AgentCreator(uid,bio,payout) VALUES(%s,%s,%s)",
+    "AgentClient": "INSERT INTO AgentClient(uid,interests,cardholder,expire,cardno,cvv,zip) VALUES(%s,%s, %s, %s, %s, %s, %s)",
+    "BaseModel": "INSERT INTO BaseModel(bmid,creator_uid,description) VALUES (%s,%s,%s)",
+    "CustomizedModel": "INSERT INTO CustomizedModel(bmid,mid) VALUES (%s,%s)",
+    "Configuration": "INSERT INTO Configuration(cid,client_uid,content,labels) VALUES (%s,%s,%s,%s)",
+    "InternetService": "INSERT INTO InternetService(sid,provider,endpoints) VALUES (%s,%s,%s)",
+    "LLMService": "INSERT INTO LLMService(sid,domain) VALUES (%s,%s)",
+    "DataStorage": "INSERT INTO DataStorage(sid,type) VALUES (%s,%s)",
+    "ModelServices": "INSERT INTO ModelServices(bmid,sid,version) VALUES (%s,%s,%s)",
+    "ModelConfigurations": "INSERT INTO ModelConfigurations(bmid,mid,cid,duration) VALUES (%s,%s,%s,%s)"
+}
+
 def import_data(folderName):
     try:
         connec = connect_to_database()
@@ -137,14 +151,34 @@ def import_data(folderName):
 
         # delete existing tables
         for table in TABLES:
-            cursor.execute("DROP TABLE IF EXISTS" + table)
+            cursor.execute("DROP TABLE IF EXISTS " + table)
 
         # create new tables
         for statement in DDLS:
             cursor.execute(statement)
 
-        # read the CSV files in given folder, import data into database
+        # read the CSV files in given folder & import data into database
+        for tableName in INSERT_STATEMENTS:
+            filePath = folderName + "/" + tableName + ".csv"
 
+            try:
+                f = open(filePath, "r", encoding = "utf-8")
+            except:
+                continue
+
+            # 1) read all lines in the file
+            # 2) if there are no entries in the file, don't insert anything
+            # 3) otherwise, parse it and insert into DB
+            lines = f.readlines()
+            f.close()
+
+            if len(lines) <= 1:
+                continue
+
+            for line in lines[1:]:
+                line = line.strip().split(",")
+                line = [None if val == "NULL" else val for val in line]
+                cursor.execute(INSERT_STATEMENTS[tableName], line)
 
         # save changes to DB, close connection, success msg
         connec.commit()
