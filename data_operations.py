@@ -96,10 +96,14 @@ def insert_agent_client(args) -> bool:
         conn.start_transaction()
         cur = conn.cursor()
 
-        cur.execute(
-            "INSERT INTO User (uid, username, email) VALUES (%s, %s, %s)",
-            (uid, username, email)
-        )
+        cur.execute("SELECT uid FROM User WHERE uid = %s", (uid,))
+        user_exists = cur.fetchone() is not None
+
+        if not user_exists:
+            cur.execute(
+                "INSERT INTO User (uid, username, email) VALUES (%s, %s, %s)",
+                (uid, username, email)
+            )
 
         cur.execute(
             "INSERT INTO AgentClient (uid, interests, cardholder, expire, cardno, cvv, zip) "
